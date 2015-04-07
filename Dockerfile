@@ -1,7 +1,7 @@
 # HowGood Base Container
 # howgood/base
 
-FROM debian:wheezy
+FROM debian:jessie
 
 # Prevent documentation from being installed http://askubuntu.com/a/401144/518
 RUN cd /etc/dpkg/dpkg.cfg.d/ \
@@ -19,6 +19,7 @@ RUN apt-get update \
           autoconf \
           binutils \
           build-essential \
+          ca-certificates \
           curl \
           gdal-bin \
           git \
@@ -33,6 +34,7 @@ RUN apt-get update \
           libglib2.0-dev \
           libjpeg-dev \
           liblcms2-dev \
+          liblzma-dev \
           libmagickcore-dev \
           libmagickwand-dev \
           libmemcached-dev \
@@ -47,8 +49,6 @@ RUN apt-get update \
           libxslt-dev \
           libyaml-dev \
           locales \
-          python \
-          python-dev \
           postgis \
           socat \
           tcl8.5-dev \
