@@ -43,6 +43,7 @@ RUN apt-get update \
           libproj-dev \
           libreadline-dev \
           libssl-dev \
+          libsqlite3-dev \
           libtiff-dev \
           libwebp-dev \
           libxml2-dev \
@@ -62,5 +63,7 @@ RUN apt-get update \
 RUN dpkg-reconfigure locales \
     && locale-gen C.UTF-8 \
     && /usr/sbin/update-locale LANG=C.UTF-8 \
+    && apt-get clean -y \
+    && apt-get autoremove -y
 
 ENV LC_ALL C.UTF-8
